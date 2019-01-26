@@ -1,2 +1,3 @@
 var feedAfterMidnight = function(feedAfterMidnight) {
-    document.getElementById("myImage").src = "gremlin.jpg";}
+    document.getElementById("myImage").src = "gremlin.jpg";
+}
