@@ -72,7 +72,9 @@ function nySqs () {
     .attr("x", 330)
     .attr("y", 70)
     .attr("width", 10)
-    .attr("height", 20);
+    .attr("height", 20)
+    .attr("stroke", "rgb(86, 101, 115)")
+    .attr("stroke-width", ".75px");
 
     rectNyEnter
     .attr("height", function(d) {
