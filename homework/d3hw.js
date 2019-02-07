@@ -41,6 +41,8 @@ function bosSqs () {
 
     //this clears unnecssary items
     rectBos.exit().remove();
+    rect.exit().remove();
+    
 
     console.log("Boston, Cambridge, Somerville");
 
@@ -79,7 +81,10 @@ function nySqs () {
     });
 
     //this clears unnecssary items
+    rectNyEnter.exit().remove();
     rectNy.exit().remove();
+    rect.exit().remove();
+
     
     console.log("NYC, Hoboken, Newark, Stamford");
 }
