@@ -5,9 +5,6 @@ title
     .style("color", "black")
     .style("text-decoration", "underline");
 
-    var sq = d3.select("svg");
-    var sqs = d3.selectAll(".pt");
-
 var bosData = [
     {name: "Boston", population: 685094},
     {name: "Cambridge", population: 11630},
@@ -19,18 +16,18 @@ var nyData = [
     {name: "Hoboken", population: 55131},
     {name: "Newark", population:  285154},
     {name: "Stamford", population: 130824},
-
     ];
 
-//button
 function bosSqs () {
     var svg = d3.select("svg");
+    var rect = d3.select("svg");
     var newSqsB = svg.selectAll(".pt")
         .data(bosData);
 
     //this is for entering new squares
-    newSqsB.enter().append("sq")
+    newSqsB.enter().append("rect")
         .attr("class", ".pt")
+        .attr("fill", "black")
         .attr("x", function(d, i) { return i * 100 + 30; })
         .attr("y", "70px");
 
@@ -40,21 +37,25 @@ function bosSqs () {
         })
         .attr("x", function(d, i) { 
             return i * 100 + 30; 
-        })
+        });
 
     //this clears unnecssary items
     newSqsB.exit().remove()
+
+    console.log("Boston, Cambridge, Somerville");
+
 }
 
-//button
 function nySqs () {
     var svg = d3.select("svg");
+    var rect = d3.select("svg");
     var newSqsN = svg.selectAll(".pt")
         .data(nyData);
 
     //this is for entering new squares
-    newSqsN.enter().append("newSqsN")
+    newSqsN.enter().append("rect")
     .attr("class", ".pt")
+    .attr("fill", "black")
     .attr("x", function(d, i) { return i * 100 + 30; })
     .attr("y", "70px");
 
@@ -64,8 +65,10 @@ function nySqs () {
     })
     .attr("x", function(d, i) { 
         return i * 100 + 30; 
-    })
+    });
 
     //this clears unnecssary items
     newSqsN.exit().remove()
+    
+    console.log("NYC, Hoboken, Newark, Stamford");
 }
