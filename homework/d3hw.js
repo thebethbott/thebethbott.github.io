@@ -15,7 +15,7 @@ var bosData = [
     ];
 
 var nyData = [
-    {name: "New York", population: 8623000},
+    {name: "New York", population: 323000},
     {name: "Newark", population:  285154},
     {name: "Jersey City", population: 270753},
     {name: "Stamford", population: 130824}
@@ -31,14 +31,16 @@ function bosSqs () {
     //this is for entering new squares
     newSqs.enter().append("sq")
         .attr("class", "pt")
-        .attr("height", function(d) { return Math.sqrt(d); })
-        .attr("x", function(d, i) { return i * 100 + 20; })
+        .attr("x", function(d, i) { return i * 100 + 30; })
         .attr("y", "70px")
 
     //This is for the second time we run the function, only then does it apply the data
-    newSqs.attr("x", function(d) {
-        return d.height / 2;
-    });
+    newSqs.attr("height", function(d) {
+            return d.population / 10000;
+        })
+        .attr("x", function(d, i) { 
+            return i * 100 + 30; 
+        })
 
     //this clears unnecssary items
     newSqs.exit().remove()
@@ -52,14 +54,16 @@ function nySqs () {
     //this is for entering new squares
     newSqs.enter().append("sq")
     .attr("class", "pt")
-    .attr("height", function(d) { return Math.sqrt(d); })
-    .attr("x", function(d, i) { return i * 100 + 20; })
     .attr("y", "70px")
 
     //This is for the second time we run the function, only then does it apply the data
-    newSqs.attr("x", function(d) {
-        return d.height / 2;
-    });
+    newSqs
+    .attr("height", function(d) {
+        return d.population / 10000;
+    })
+    .attr("x", function(d, i) { 
+        return i * 100 + 30; 
+    })
 
     //this clears unnecssary items
     newSqs.exit().remove()
