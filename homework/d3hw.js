@@ -27,7 +27,6 @@ function bosSqs () {
     //this is for entering new squares
     newSqsB.enter().append("rect")
         .attr("class", ".pt")
-        .attr("fill", "black")
         .attr("x", function(d, i) { return i * 100 + 30; })
         .attr("y", "70px");
 
@@ -55,7 +54,6 @@ function nySqs () {
     //this is for entering new squares
     newSqsN.enter().append("rect")
     .attr("class", ".pt")
-    .attr("fill", "black")
     .attr("x", function(d, i) { return i * 100 + 30; })
     .attr("y", "70px");
 
