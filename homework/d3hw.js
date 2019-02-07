@@ -15,27 +15,27 @@ var bosData = [
     ];
 
 var nyData = [
-    {name: "New York", population: 323000},
+    {name: "New York", population: 3623000},
+    {name: "Hoboken", population: 55131},
     {name: "Newark", population:  285154},
-    {name: "Jersey City", population: 270753},
-    {name: "Stamford", population: 130824}
-    ];
+    {name: "Stamford", population: 130824},
 
-var svg = d3.select("svg")
+    ];
 
 //button
 function bosSqs () {
-    var newSqs = svg.selectAll(".pt")
+    var svg = d3.select("svg");
+    var newSqsB = svg.selectAll(".pt")
         .data(bosData);
 
     //this is for entering new squares
-    newSqs.enter().append("sq")
-        .attr("class", "pt")
+    newSqsB.enter().append("sq")
+        .attr("class", ".pt")
         .attr("x", function(d, i) { return i * 100 + 30; })
-        .attr("y", "70px")
+        .attr("y", "70px");
 
     //This is for the second time we run the function, only then does it apply the data
-    newSqs.attr("height", function(d) {
+    newSqsB.attr("height", function(d) {
             return d.population / 10000;
         })
         .attr("x", function(d, i) { 
@@ -43,22 +43,23 @@ function bosSqs () {
         })
 
     //this clears unnecssary items
-    newSqs.exit().remove()
+    newSqsB.exit().remove()
 }
 
 //button
 function nySqs () {
-    var newSqs = svg.selectAll(".pt")
+    var svg = d3.select("svg");
+    var newSqsN = svg.selectAll(".pt")
         .data(nyData);
 
     //this is for entering new squares
-    newSqs.enter().append("sq")
-    .attr("class", "pt")
-    .attr("y", "70px")
+    newSqsN.enter().append("newSqsN")
+    .attr("class", ".pt")
+    .attr("x", function(d, i) { return i * 100 + 30; })
+    .attr("y", "70px");
 
     //This is for the second time we run the function, only then does it apply the data
-    newSqs
-    .attr("height", function(d) {
+    newSqsN.attr("height", function(d) {
         return d.population / 10000;
     })
     .attr("x", function(d, i) { 
@@ -66,5 +67,5 @@ function nySqs () {
     })
 
     //this clears unnecssary items
-    newSqs.exit().remove()
+    newSqsN.exit().remove()
 }
