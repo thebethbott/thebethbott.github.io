@@ -19,30 +19,40 @@ var nyData = [
     ];
 
 function bosSqs () {
-    var svg = d3.select("svg");
-    var rectBos = svg.selectAll(".pt")
+    var svg = d3.select("svg");    
+    var rectBos = svg.selectAll("rect")
         .data(bosData);
 
     //this is for entering new squares
-    rectBos.enter().append("rect")
-        .attr("class", "pt")
-        .attr("x", function() { 
-            return Math.random() * 200; 
-        })
-        .attr("y", "70px");
+    var rectBosEnter = rectBos.enter().append("rect");
+
+    rectBosEnter
+    .attr("class", "rect")
+    .attr("fill", "black")
+    .attr("x", 330)
+    .attr("y", 70)
+    .attr("width", 10)
+    .attr("height", 20);
+
+    rectBosEnter
+    .attr("height", function(d) {
+        return d.population / 10000;
+    })
+    .attr("x", function(d, i) { 
+        return i * 100 + 30; 
+    });
 
     //This is for the second time we run the function, only then does it apply the data
     rectBos.attr("height", function(d) {
-            return d.population / 10000;
-        })
-        .attr("x", function(d, i) { 
-            return i * 100 + 30; 
-        });
+        return d.population / 10000;
+    })
+    .attr("x", function(d, i) { 
+        return i * 100 + 30; 
+    });
 
     //this clears unnecssary items
     rectBos.exit().remove();
-    rect.exit().remove();
-    
+
 
     console.log("Boston, Cambridge, Somerville");
 
@@ -50,14 +60,14 @@ function bosSqs () {
 
 function nySqs () {
     var svg = d3.select("svg");    
-    var rectNy = svg.selectAll(".pt")
+    var rectNy = svg.selectAll("rect")
         .data(nyData);
 
     //this is for entering new squares
     var rectNyEnter = rectNy.enter().append("rect");
 
     rectNyEnter
-    .attr("class", ".pt")
+    .attr("class", "rect")
     .attr("fill", "black")
     .attr("x", 330)
     .attr("y", 70)
@@ -81,10 +91,7 @@ function nySqs () {
     });
 
     //this clears unnecssary items
-    rectNyEnter.exit().remove();
     rectNy.exit().remove();
-    rect.exit().remove();
-
     
     console.log("NYC, Hoboken, Newark, Stamford");
 }
