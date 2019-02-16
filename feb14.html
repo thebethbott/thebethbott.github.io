@@ -7,6 +7,9 @@
     </head>
     <body>
         <h1 id="title">scales tool tips axes n' things</h1>
+        <svg width="100%">
+
+        </svg>
         <script>
             
             var data = [0.2, 1.7, 4.3, 3.3];
@@ -22,6 +25,17 @@
             .domain([0, 5])
             .range(["black", "red"]);
 
+            var svg = d3.select("svg");
+
+            var circles = svg.selectall("circle")
+                .data(data);
+
+            circles.enter().append("circle")
+                .attr("r", 10)
+                .attr("fill", function(d){
+                    
+
+                })
         </script>
     </body>   
 </html>
