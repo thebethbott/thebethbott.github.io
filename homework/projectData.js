@@ -8,5 +8,3 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error,data) {
             d.export = parseFloat(d.export);
     });
 });
-
-console.log("END OF THE LINE")
