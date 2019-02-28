@@ -1,6 +1,5 @@
 body {
     background-color: white;
-    font-family: 'Lato', sans-serif;
 }
 img {
     display: block;
@@ -11,6 +10,7 @@ img {
   }
  h1 {
     color: rgb(44, 45, 48); 
+    font-family: 'Lato', sans-serif;
     font-size: 40px;
     font-style: bold;
     text-align: center;
@@ -18,17 +18,20 @@ img {
     }
 h2 {
     color: rgb(50, 51, 56); 
+    font-family: 'Open Sans', sans-serif;
     font-size: 14px; 
     text-align: center;
     max-width: 800px;
     }
 h3 {
     color: rgb(50, 51, 56); 
+    font-family: 'Open Sans', sans-serif;
     font-size: 12px; 
     text-align: left;
     }
 h4 {
     color: rgb(50, 51, 56); 
+    font-family: 'Open Sans', sans-serif;
     font-size: 12px; 
     text-align: right;
     margin: 1200
