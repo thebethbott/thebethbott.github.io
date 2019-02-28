@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Manipulating data</title>
+    </head>
+    <body>
+      <p>
+        <h1>Manipulating data</h1>
+      </p>
+      <script>
+          d3.csv("data/csvData.csv", function(error,data) {
+            console.log(data);
+            data.forEach(function(d,i) {
+                d.exportNum = parseFloat(d.export);
+                d.source = "davemadethis";
+                d.index = i + 1;
+                });
+
+            var currentData = data.filter(function(d) {
+                return d.year == "2018";
+            });
+            console.log (currentData);
+
+            var mexicoData = data.filter (function (d) {
+                return d.country == "mx";
+            });
+            console.log(mexicoData);
+
+            var dataExtent = d3.extent(currentData, function(d) {
+                return d.export;
+                });
+            console.log(dataExtent);
+
+            var xScale = d3.scaleLinear()
+                .domain(dataExtent)
+                .range([0, window.innerWidth]);
+
+            });
+
+            var groupedCountries = d3.nest()
+                .key(function(row) {
+                    return row.country;
+                })
+                .entries(data);
+
+                console.log(groupedCountries);
+        });
+
+        </script>
+    </body>
+</html>

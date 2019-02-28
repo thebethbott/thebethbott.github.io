@@ -1,0 +1,30 @@
+body {
+    background-color: white;
+    font-family: 'Lato', sans-serif;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    align: middle;
+    vertical-align: middle;
+  }
+ h1 {
+    color: rgb(44, 45, 48); 
+    font-size: 40px;
+    font-style: bold;
+    text-align: center;
+    text-shadow: 2px 2px 2px #aaa;
+    }
+h2 {
+    color: rgb(50, 51, 56); 
+    font-size: 14px; 
+    text-align: center;
+    max-width: 800px;
+    }
+h3 {
+    color: rgb(50, 51, 56); 
+    font-size: 12px; 
+    text-align: left;
+    }
