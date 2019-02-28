@@ -19,6 +19,7 @@ img {
 h2 {
     color: rgb(50, 51, 56); 
     font-family: 'Open Sans', sans-serif;
+    font-style: bold;
     font-size: 14px; 
     text-align: center;
     max-width: 800px;
