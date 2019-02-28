@@ -17,11 +17,12 @@ img {
     text-shadow: 2px 2px 2px #aaa;
     }
 h2 {
+    text-align: center;
     color: rgb(50, 51, 56); 
     font-family: 'Open Sans', sans-serif;
     font-style: bold;
     font-size: 14px; 
-    text-align: center;
+    margin: 0 auto;
     max-width: 800px;
     }
 h3 {
