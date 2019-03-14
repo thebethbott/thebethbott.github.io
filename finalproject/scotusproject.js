@@ -21,5 +21,8 @@ d3.csv("scotusdatabyissue2.16.19.csv", data.forEach (function issueFrquency (d) 
     .attr("x", function(d, i) { 
         return i * 100 + 30; 
     });
-    
+
+    //define issues: criminal procedure = 1, civil rights = 2, First Amendment = 3, due process = 4, privacy = 5, attorneys' or governmental officials' fees or compensation = 6, unions = 7, economic activity = 8, judicial power = 9, federalism = 10, interstate relation = 11, federal taxation = 12, miscellaneous = 13, and private law = 14
+
 });
+
