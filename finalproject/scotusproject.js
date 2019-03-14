@@ -1,6 +1,6 @@
 d3.csv("scotusdatabyissue2.16.19.csv", data.forEach (function issueFrquency (d) {
     var groupIssue = d3.nest()
-    .key(function(d) { return d.caseIssuesId; })
+    .key(function(d) { return d.issue; })
     .rollup(function(v) { return v.frequency; })
     .entries(issues);
 
