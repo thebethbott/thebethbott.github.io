@@ -4,7 +4,10 @@ d3.csv("scotusdatabyissue2.16.19.csv", data.forEach (function issueFrquency (d) 
     .rollup(function(v) { return v.frequency; })
     .entries(issues);
 
-    var svg = d3.select("vizOne")  
+    var svg = d3.select("vizOne") 
+        .attr ("width", svgWidth)
+        .attr ("height", svgHeight)
+
     var rectIssueFrequency = svg.selectAll("rect")
         .data(groupIssue);
 

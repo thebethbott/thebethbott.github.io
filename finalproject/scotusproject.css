@@ -1,9 +1,11 @@
 body {
     background-image: url("SCOTUS_0.jpg");
-    opacity: 0.99;
-    filter: alpha(opacity=99);
+    opacity: 1;
+    filter: alpha(opacity=100);
     background-attachment: fixed;
     background-position: center; 
+    background-color: rgba(255, 255, 355, 0.7);
+    background-blend-mode: lighten;
     background-repeat: no-repeat;
   }
 img {
