@@ -15,6 +15,10 @@ img {
     width: 40%;
     box-align: middle;
   }
+div {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
  h1 {
     text-align: center;
     color: rgb(44, 45, 48); 
@@ -28,6 +32,7 @@ h2 {
     color: rgb(50, 51, 56); 
     font-family: 'Open Sans', sans-serif;
     font-style: bold;
+    font-style: underline;
     font-size: 14px; 
     margin: 0 auto;
     max-width: 800px;

@@ -1,6 +1,6 @@
 d3.csv("scotusdatabyissue2.16.19.csv", data.forEach (function issueFrquency (d) {
     var groupIssue = d3.nest()
-    .key(function(d) { return d.issue; })
+    .key(function(d) { return d.issueArea; })
     .rollup(function(v) { return v.frequency; })
     .entries(issues);
 
@@ -16,8 +16,8 @@ d3.csv("scotusdatabyissue2.16.19.csv", data.forEach (function issueFrquency (d) 
     groupIssueBarEnter
     .attr("class", "rect")
     .attr("fill", "blue")
-    .attr("y", 70)
-    .attr("height", 20)
+    .attr("y", 90)
+    .attr("height", 10)
     .attr("width", function(d) {
         return d.rectIssueFrequency / 100;
     })
