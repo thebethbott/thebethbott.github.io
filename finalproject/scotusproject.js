@@ -25,6 +25,18 @@ d3.csv("scotusdatabyissue2.16.19.csv", data.forEach (function issueFrquency (d) 
         return i * 100 + 30; 
     });
 
-    //define issues: criminal procedure = 1, civil rights = 2, First Amendment = 3, due process = 4, privacy = 5, attorneys' or governmental officials' fees or compensation = 6, unions = 7, economic activity = 8, judicial power = 9, federalism = 10, interstate relation = 11, federal taxation = 12, miscellaneous = 13, and private law = 14
-
+    // var data = [{"issue":"Criminal Procedure","frequency":1},
+        //{"issue":"Civil Rights","code":2},
+        //{"issue":"First Amendment","code":3},
+        //{"issue":"Due Process","code":4},
+        //{"issue":"Privacy","code":5},
+        //{"issue":"Legal or Government fees or compensation","code":6},
+        //{"issue":"Unions","code":7},
+        //{"issue":"Economic Activity","code":8},
+        //{"issue":"Judicial Power","code":9},
+        //{"issue":"Federalism","code":10},
+        //{"issue":"Interstate Relation","code":11},
+        //{"issue":"Federal Taxation","code":12},
+        //{"issue":"Other","code":13},
+        //{"issue":"Private Law","code":14}]
 }),)
