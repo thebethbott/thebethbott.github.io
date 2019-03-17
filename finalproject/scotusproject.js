@@ -1,12 +1,10 @@
-d3.csv("scotusdatabyissue2.16.19.csv", data.forEach (function issueFrquency (d) {
+d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
     var groupIssue = d3.nest()
-    .key(function(d) { return d.issueArea; })
-    .rollup(function(v) { return v.frequency; })
-    .entries(issues);
+        .key(function(d) { return d.issueArea; })
+        // .rollup(function(v) { return v.frequency; })
+        .entries(data);
 
-    var svg = d3.select("vizOne") 
-        .attr ("width", svgWidth)
-        .attr ("height", svgHeight)
+    var svg = d3.select("#vizOne") 
 
     var rectIssueFrequency = svg.selectAll("rect")
         .data(groupIssue);
@@ -15,15 +13,37 @@ d3.csv("scotusdatabyissue2.16.19.csv", data.forEach (function issueFrquency (d) 
 
     groupIssueBarEnter
     .attr("class", "rect")
-    .attr("fill", "blue")
-    .attr("y", 90)
-    .attr("height", 10)
+    .attr("fill", "slategrey")
+    .attr("stroke", "darkslategrey")
+    .attr("stroke-width", "1.25")
+    .attr("x", 150)
+    .attr("height", 13)
     .attr("width", function(d) {
-        return d.rectIssueFrequency / 100;
+        console.log(d)
+        return d.values.length / 3;
     })
     .attr("y", function(d, i) { 
-        return i * 100 + 30; 
+        return i * 28 + 90; 
     });
+
+    //var labelIssueFrequency = svg.selectAll("rect")
+        //.data(labelIssue);
+
+    //var labelIssueEnter = labelIssueFrequency.enter().append("text");
+
+    //labelIssueEnter
+        //.attr("class", "text")
+        //.attr("color", "darkslategrey")
+        //.attr("font", "opensans")
+        //.attr("stroke-width", "1.25")
+        //.attr("x", 50)
+        //.attr("text", function(d) {
+            //return d.key
+                //.attr(i + 1 = var issue)
+        //})
+        //.attr("y", function(d, i) { 
+            //return i * 28 + 90; 
+        //});
 
     // var data = [{"issue":"Criminal Procedure","frequency":1},
         //{"issue":"Civil Rights","code":2},
@@ -39,4 +59,4 @@ d3.csv("scotusdatabyissue2.16.19.csv", data.forEach (function issueFrquency (d) 
         //{"issue":"Federal Taxation","code":12},
         //{"issue":"Other","code":13},
         //{"issue":"Private Law","code":14}]
-}),)
+});
