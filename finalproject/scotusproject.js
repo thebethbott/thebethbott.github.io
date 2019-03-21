@@ -26,37 +26,42 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
         return i * 28 + 90; 
     });
 
-    //var labelIssueFrequency = svg.selectAll("rect")
-        //.data(labelIssue);
 
-    //var labelIssueEnter = labelIssueFrequency.enter().append("text");
+    var issueMapping = {
+        "1": "Criminal Procedure",
+        "2": "Civil Rights",
+        "3": "First Amendment",
+        "4": "Due Process",
+        "5": "Privacy",
+        "6": "Legal or Government fees or compensation",
+        "7": "Unions",
+        "8": "Economic Activity",
+        "9": "Judicial Power",
+        "10": "Federalism",
+        "11": "Interstate Relation",
+        "12": "Federal Taxation",
+        "13": "Other",
+        "14": "Private Law"
+        };
+          
+    data.forEach(function(d) {
+        d.fullName = issueMapping[d.key];
+        });
 
-    //labelIssueEnter
-        //.attr("class", "text")
-        //.attr("color", "darkslategrey")
-        //.attr("font", "opensans")
-        //.attr("stroke-width", "1.25")
-        //.attr("x", 50)
-        //.attr("text", function(d) {
-            //return d.key
-                //.attr(i + 1 = var issue)
-        //})
-        //.attr("y", function(d, i) { 
-            //return i * 28 + 90; 
-        //});
+    
+        var labelIssueEnter = svg.selectAll("text")
+        .data(groupIssue)
+        .enter()
+        .append("text");
 
-    // var data = [{"issue":"Criminal Procedure","frequency":1},
-        //{"issue":"Civil Rights","code":2},
-        //{"issue":"First Amendment","code":3},
-        //{"issue":"Due Process","code":4},
-        //{"issue":"Privacy","code":5},
-        //{"issue":"Legal or Government fees or compensation","code":6},
-        //{"issue":"Unions","code":7},
-        //{"issue":"Economic Activity","code":8},
-        //{"issue":"Judicial Power","code":9},
-        //{"issue":"Federalism","code":10},
-        //{"issue":"Interstate Relation","code":11},
-        //{"issue":"Federal Taxation","code":12},
-        //{"issue":"Other","code":13},
-        //{"issue":"Private Law","code":14}]
-});
+        labelIssueEnter
+        .attr("fill", "darkslategrey")
+        .attr("font-family", "opensans")
+        .attr("font-size", "14px")
+        .attr("x", 50)
+        .text( function (d) { 
+            return d.fullname; })
+        .attr("y", function(d, i) { 
+            return i * 28 + 90; 
+        });
+    });
