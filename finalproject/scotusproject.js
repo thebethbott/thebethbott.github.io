@@ -45,7 +45,7 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
         };
           
     data.forEach(function(d) {
-        d.fullName = issueMapping[d.key];
+        d.key = issueMapping[d.issue];
         });
 
     
