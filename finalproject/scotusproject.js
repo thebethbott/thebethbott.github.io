@@ -60,7 +60,7 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
         .attr("font-size", "14px")
         .attr("x", 50)
         .text( function (d) { 
-            return d.fullname; })
+            return d.issue; })
         .attr("y", function(d, i) { 
             return i * 28 + 90; 
         });
