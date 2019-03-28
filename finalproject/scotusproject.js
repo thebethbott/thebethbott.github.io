@@ -74,11 +74,14 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
     //Review mouse over label
     d3.selectAll("rect")
         .on("mouseover", function(d) {
+            //d3.select(this).enter().append("text")
+                //.text(function(d) {return d.x;})
+                //.attr("x", function(d) {return x(d.x);})
             var mouse = d3.mouse(document.body);
             d3.select("#tooltip")
                 .style("display", "block")
                 .html("<h4>" + d.values + "</h4>")
-                .style("left", mouse[0] + "px")
+                .style("right", mouse[0] + "px")
                 .style("top", mouse[1] - 50 + "px");
         })
         .on("mouseout", function(d) {
