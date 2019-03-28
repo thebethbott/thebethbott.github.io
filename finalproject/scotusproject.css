@@ -17,8 +17,8 @@ img {
     box-align: middle;
   }
 div {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
  h1 {
     text-align: center;
@@ -46,7 +46,7 @@ h3 {
     font-style: underline;
     font-size: 13px; 
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 750px;
     }
 h4 {
     color: rgb(50, 51, 56); 
