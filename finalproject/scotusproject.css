@@ -39,10 +39,14 @@ h2 {
     max-width: 800px;
     }
 h3 {
-    color: rgb(50, 51, 56); 
+    text-align: right;
+    color: rgb(80, 81, 86); 
     font-family: 'Open Sans', sans-serif;
-    font-size: 12px; 
-    text-align: left;
+    font-style: bold;
+    font-style: underline;
+    font-size: 13px; 
+    margin: 0 auto;
+    max-width: 800px;
     }
 h4 {
     color: rgb(50, 51, 56); 
@@ -62,3 +66,13 @@ h5 {
   margin: 0 auto;
   max-width: 800px;
   }
+  h6 {
+    text-align: left;
+    color: rgb(80, 81, 86); 
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    font-style: underline;
+    font-size: 13px; 
+    margin: 0 auto;
+    max-width: 800px;
+    }
