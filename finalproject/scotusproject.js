@@ -25,30 +25,25 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
         .key(function(d) { return d.issueArea; })
         .entries(data);
 
-    //X-axis Attempt 1
-    //var x_domain = d3.extent(data, function(d) { return d.key; }),
+    var x_domain = d3.max(groupIssue, function(d) { return d.values.length; });
         
-    //var xScale = d3.values.scaleLinear()
-        //.domain(x_domain) 
-        //.range([200, 1000]);
+    var xScale = d3.scaleLinear()
+        .domain([0, x_domain]) 
+        .range([200, 1000]);
     
-    var svg = d3.select("#vizOne") 
+    var svg = d3.select("#vizOne"); 
+    
+    var axis = d3.axisBottom(xScale);
+        d3.select("#x-Axis").call(axis)
+        .attr("transform", "translate(0,480)");
 
-    //X-Axis Attempt 2 
-    //var xScale = d3.scaleLinear()
-            //.domain([0, d3.max(d3.values(groupIssue))])
-            //.range([200, 1000]);
-    
-    //var axis = d3.axisBottom(xScale);
-        //d3.select("#xAxis").call(axis);
+    //var yScale = d3.scale.linear()
+        //.domain(y_domain).nice()
+        //range([height, 0], 0.5, 0.2);
 
-    //X-Axis Attempt 3
-    //var xScale = d3.scaleLinear()
-            //.domain([0, 2900)])
-            //.range([200, 1000]);
-    
-    //var axis = d3.axisBottom(xScale);
-        //d3.select("#xAxis").call(axis);
+    //var yAxis = d3.svg.axis()
+        //.orient("left")
+        //.scale(yScale);
 
     var rectIssueFrequency = svg.selectAll("rect")
         .data(groupIssue);
@@ -64,37 +59,12 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
         .attr("height", 13)
         .attr("width", function(d) {
             console.log(d)
-            return d.values.length / 3;
-            //return xScale(d.values);
+            return xScale(d.values.length) - 200;
         })
         .attr("y", function(d, i) { 
-            return i * 28 + 90; 
+            return i * 28 + 87; 
         });
 
-    //Review mouse over label
-    d3.selectAll("rect")
-        .on("mouseover", function(d) {
-            //d3.select(this).enter().append("text")
-                //.text(function(d) {return d.x;})
-                //.attr("x", function(d) {return x(d.x);})
-            var mouse = d3.mouse(document.body);
-            d3.select("#tooltip")
-                .style("display", "block")
-                .html("<h4>" + d.values + "</h4>")
-                .style("right", mouse[0] + "px")
-                .style("top", mouse[1] - 50 + "px");
-        })
-        .on("mouseout", function(d) {
-            d3.select("#tooltip")
-                .style("display", "none")
-        });
-
-    //Review empty issue exclude
-    rectIssueFrequency
-        .filter(function(d) { 
-            return d.key == null; 
-        }).remove();
-        
     var issueMapping = {
         "1": "Criminal Procedure",
         "2": "Civil Rights",
@@ -130,7 +100,8 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
         .text( function (d) { 
             return d.issue; })
         .attr("y", function(d, i) { 
-            return i * 28 + 90; 
+            console.log(d)
+            return i * 28; 
         })
         .attr("dy", "10px");
     });
