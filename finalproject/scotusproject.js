@@ -101,7 +101,7 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
             return d.issue; })
         .attr("y", function(d, i) { 
             console.log(d)
-            return i * 28; 
+            return i * 28 + 87; 
         })
         .attr("dy", "10px");
     });
