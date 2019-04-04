@@ -62,7 +62,7 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
             return xScale(d.values.length) - 200;
         })
         .attr("y", function(d, i) { 
-            return i * 28 + 87; 
+            return i * 28 + 77; 
         });
 
     var issueMapping = {
@@ -101,7 +101,7 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
             return d.issue; })
         .attr("y", function(d, i) { 
             console.log(d)
-            return i * 28 + 87; 
+            return i * 28 + 77; 
         })
         .attr("dy", "10px");
     });
