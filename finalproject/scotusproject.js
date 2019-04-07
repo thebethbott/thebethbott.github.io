@@ -1,5 +1,5 @@
 //Line Enter on D3 Attempt
-//var starterData = [1,2,3,4,5,6,7,8,9];
+//var rembererxAxis = [1,2,3,4,5,6,7,8,9];
 //
 //        var svg = d3.select("svg");
 
@@ -45,6 +45,11 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
         //.orient("left")
         //.scale(yScale);
 
+            
+    var div = d3.select("body").append("div")	
+        .attr("class", "tooltip")				
+        .style("opacity", 0);
+
     var rectIssueFrequency = svg.selectAll("rect")
         .data(groupIssue);
 
@@ -52,8 +57,7 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
 
     groupIssueBarEnter
         .attr("class", "rect")
-        .attr("fill", "slategrey")
-        .attr("stroke", "darkslategrey")
+        .attr("fill", "saddlebrown")
         .attr("stroke-width", "1.25")
         .attr("x", "202")
         .attr("height", 13)
@@ -62,7 +66,19 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
             return xScale(d.values.length) - 200;
         })
         .attr("y", function(d, i) { 
-            return i * 28 + 77; 
+            return i * 28 + 77})        
+      .on("mouseover", function(d) {		
+          div.transition()		
+              .duration(200)		
+              .style("opacity", .9);		
+          div	.html(d.issue)	
+              .style("left", (d3.event.pageX) + "px")		
+              .style("top", (d3.event.pageY - 28) + "px");	
+          })					
+      .on("mouseout", function(d) {		
+          div.transition()		
+              .duration(500)		
+              .style("opacity", 0);
         });
 
     var issueMapping = {
@@ -86,14 +102,15 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
         d.issue = issueMapping[d.key];
         });
 
-    var labelIssueEnter = svg.selectAll("text")
+    var labelIssueEnter = svg.selectAll(".label")
         .data(groupIssue)
         .enter()
         .append("text");
 
     labelIssueEnter
-        .attr("fill", "darkslategrey")
-        .attr("font-family", "opensans")
+        .attr("class", "label")
+        .attr("fill", "black")
+        .attr("font-family", "Lato")
         .attr("font-size", "14px")
         .attr("text-anchor", "end")
         .attr("x", "190")
@@ -104,8 +121,24 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
             return i * 28 + 77; 
         })
         .attr("dy", "10px");
+
+    function make_x_gridlines() {		
+        return d3.axisBottom(axis)
+        .ticks(5)};
+
+    svg.append("line")			
+        .attr("class", "grid")
+        .attr ("stroke","black")
+        .attr("stroke-width", "1.25")
+        .attr("transform", "translate(0," + 400 + ")")
+        .call(make_x_gridlines()
+            .tickSize("height", "440")
+            .tickFormat("")
+            );
+
     });
 
+    
 d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
     var groupIssue = d3.nest()
         .key(function(d) { return d.issueArea; })
