@@ -132,7 +132,7 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
         .attr("stroke-width", "1.25")
         .attr("transform", "translate(0," + 400 + ")")
         .call(make_x_gridlines()
-            .tickSize("height", "440")
+            .tickSize("height", "-440")
             .tickFormat("")
             );
 
