@@ -71,7 +71,7 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
           div.transition()		
               .duration(200)		
               .style("opacity", .9);		
-          div	.html(d.issue)	
+          div	.html(d.values.length)	
               .style("left", (d3.event.pageX) + "px")		
               .style("top", (d3.event.pageY - 28) + "px");	
           })					
