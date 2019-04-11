@@ -1,25 +1,3 @@
-//Line Enter on D3 Attempt
-//var rembererxAxis = [1,2,3,4,5,6,7,8,9];
-//
-//        var svg = d3.select("svg");
-
-//        var line = svg.selectAll("line")
-//            .data(starterData);
-//
-//        line.enter().append("line")
-//            .attr("class", "line")
-//            .attr("stroke", "grey")
-//            .attr("stroke-width", "1.25")
-//            .attr("y1", "80")
-//            .attr("y2", "490")
-//            .attr("x1", function(d.starterData) {
-//            return i * 100 + 40;
-//            })
-//            .attr("x2", function(d,i) {
-//            return i * 100 + 40;
-//            });
-
-
 d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
     var groupIssue = d3.nest()
         .key(function(d) { return d.issueArea; })
