@@ -70,3 +70,8 @@ div.tooltip {
   border-radius: 8px;			
   pointer-events: none;			
 }
+
+#vizOne {
+        display: block;
+        margin: 0 auto;
+}
