@@ -71,7 +71,23 @@ div.tooltip {
   pointer-events: none;			
 }
 
+.container {
+  position: relative;
+}
+
 #vizOne {
-        display: block;
-        margin: 0 auto;
+  display: inline-block;
+  margin: 0 auto;
+  margin-left: auto;
+  margin-right: 10px;
+  margin-bottom: 50px;
+}
+
+#vizText {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 50%;
+  position: absolute;
 }

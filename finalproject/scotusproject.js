@@ -12,8 +12,8 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
     var svg = d3.select("#vizOne"); 
     
     var axis = d3.axisBottom(xScale);
-        d3.select("#x-Axis").call(axis)
-        .attr("transform", "translate(0,480)");
+    d3.select("#x-Axis").call(axis)
+      .attr("transform", "translate(0,480)");
 
     //var yScale = d3.scale.linear()
         //.domain(y_domain).nice()
@@ -58,6 +58,9 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
               .duration(500)		
               .style("opacity", 0);
         });
+        //more text in tool tips (catagory and cases)
+        //img inline with text
+        //fix inline text formatting
 
     var issueMapping = {
         "1": "Criminal Procedure",
@@ -100,19 +103,11 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
         })
         .attr("dy", "10px");
 
-    function make_x_gridlines() {		
-        return d3.axisBottom(axis)
-        .ticks(5)};
-
-    svg.append("line")			
-        .attr("class", "grid")
-        .attr ("stroke","black")
-        .attr("stroke-width", "1.25")
-        .attr("transform", "translate(0," + 400 + ")")
-        .call(make_x_gridlines()
-            .tickSize("height", "-440")
-            .tickFormat("")
-            );
+    var grid = d3.axisBottom(xScale)
+      .tickSize(-440)
+      .tickFormat("");
+    d3.select("#x-Grid").call(grid)
+      .attr("transform", "translate(0,480)");
 
     });
 
