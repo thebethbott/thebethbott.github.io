@@ -6,31 +6,61 @@
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <link rel="stylesheet" href="scotusproject.css"/>
         <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
     </head>
     <body>
-        <div style="text-align: center;">
-        <h1>Issue Prevalence in the U.S. Supreme Court</h1>
-        <svg height=10 width=1000><line x1=20% y1=0 x2=80% y2=0 stroke="black" stroke-width="2px"/></svg>
+        <h1>Issue Prevalence in the <br /> U.S. Supreme Court</h1>
+    <div class= "section">
+        <blockquote> <i>"The Court is the highest tribunal in the Nation for all cases and controversies arising 
+            under the Constitution or the laws of the United States. As the final arbiter of the law, 
+            the Court is charged with ensuring the American people the promise of equal justice under law and, 
+            thereby, also functions as guardian and interpreter of the Constitution."</i> 
+            <span> &mdash; SupremeCourt.gov </span> </blockquote>
+    </div>
+        <div class="dark">
+            <div class = section>
+            <div id="upperDisplay">
+                <img src="Scotus party.jpg"/>
+                <p>The Supreme Court and its eight justices hear cases on a variety of issues ranging from 
+                    protecting states’ rights to privacy. Both issues have been linked with larger social 
+                    movements (the conservative right and the LGBTQIA+ and Women's movements respectively). 
+                    Justices select the specific cases they will hear in a given term and their discretion has 
+                    a lasting impact on the legacy of the Court. As a way to understand the distribution of 
+                    Judicial power towards progress on these issues, below we compare the number of cases that 
+                    focus on each issue area.</p>
+        </div></div>
+            <br class="clear"/>
         </div>
-        <div> 
-        <p> <i>"The Court is the highest tribunal in the Nation for all cases and controversies arising under the Constitution or the laws of the United States. As the final arbiter of the law, the Court is charged with ensuring the American people the promise of equal justice under law and, thereby, also functions as guardian and interpreter of the Constitution."</i>  - SupremeCourt.gov </p>
-        <p>The Supreme Court and its eight justices hear cases on a variety of issues ranging from protecting states’ rights to privacy. Both issues have been linked with larger social movements (the conservative right and the LGBTQIA+ and Women's movements respectively). Justices select the specific cases they will hear in a given term and their discretion has a lasting impact on the legacy of the Court. As a way to understand the distribution of Judicial power towards progress on these issues, below we compare the number of cases that focus on each issue area.</p>
-        </div>
-        <img src="Scotus party.jpg" height="25%" width="25%">
-        <br><br>
         <div class="container">
         <span><h2>Total Cases Discussed by Issue</h2>
-        <svg id="vizOne" width=80% height=500 align="center">
+        <svg id="vizOne">
                 <g id="x-Grid"></g>
                 <g id="x-Axis"></g>
             </svg>
-        <p id="vizText" height=500> The primary issue areas at the forefront of the Court's cumulative caseload include:
-                1) Economic activity- wage arbitration, property claims, and corruption
-                2) Criminal procedure- cruel and unusual punishment, right to council, and illegal search and seizure
-                3) Judicial power- jurisdiction, certiorari and mootness</p></div>
-        <br><br>
-        <p>Rationally property and safety are at the fundamental core of any rule of law society, and Judicial power is the organizing principal by which both are determined- logically these are the primary areas of focus. Far fewer cases fundamentally change our rights and protections in areas elsewhere in our lives such as our ability to speak without judicial consequence and our ability to organize labor movements. However, when we look to determine if a primary function of the Court has been to pursue activist social movements, we cannot deny that a primary function of the Court is also Civil Rights which range broadly from affirmative action and integration to voting rights and jurisdiction limitations over indigenous peoples. While the Court remains true to its function in the constitution, simply as enforcement over policy determine by the legislature, by pushing the boundaries of the interpretations of the constitution, it also has in fact exercised its power to adjudicate beyond the scope of existing agreed upon laws. </p>
-        <p> Conclusion- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sapien enim, feugiat facilisis arcu vel, consectetur ultrices dolor. Etiam vel mi luctus, lobortis risus ut, placerat nulla. Nunc quis purus consequat, malesuada diam feugiat, tempus leo. Nam elementum odio odio, id tempor lectus gravida in. Nam tristique augue vitae nunc rhoncus, consectetur consectetur tortor imperdiet. Aliquam ut orci rhoncus, elementum nibh et, tempus lectus. Etiam convallis lectus nec magna faucibus imperdiet. </p>   <p>Credits and links: project by Bethany Basile; data from Washington University Law </p>
+        <div id="vizText"><p height=500 text-color=rgb(0,58,80)> The primary issue areas at the forefront of <br /> 
+                the Court's cumulative caseload include:</p>
+                <ol><li>Economic activity- wage arbitration, property claims, and corruption</li>
+                    <li>Criminal procedure- cruel and unusual punishment, 
+                        right to council, and illegal search and seizure </li>
+                    <li>Judicial power- jurisdiction, certiorari and mootness</li></ol></div></div>
+        <br /><br />
+        <div class="dark2">
+        <div id="lowerDisplay">
+            <h2>Analysis</h2>
+            <p>Rationally property and safety are at the fundamental core of any rule of law society, 
+            and Judicial power is the organizing principal by which both are determined&mdash; logically 
+            these are the primary areas of focus. Far fewer cases fundamentally change our rights and 
+            protections in areas elsewhere in our lives such as our ability to <strong>speak without judicial 
+            consequence</strong> and our ability to <strong>organize labor movements</strong>. 
+            <br /><br />However, when we look to determine if a primary function of the Court has been to pursue 
+            activist social movements, we cannot deny that a primary function of the Court is also Civil Rights 
+            which range broadly from affirmative action and integration to voting rights and jurisdiction limitations over indigenous peoples. 
+            <br /><br />While the Court remains true to its function in the constitution, simply as enforcement over 
+            policy determine by the legislature, <strong>by pushing the boundaries of the interpretations of the 
+            constitution, it also has in fact exercised its power to adjudicate beyond the scope of existing 
+            agreed upon laws</strong>. </p></div></div>
+        <p id="credits">Credits: project by Bethany Basile; data from Washington University Law</p>
         <script src="scotusproject.js"></script>
+    </div>
     </body>
 </html>

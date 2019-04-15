@@ -1,28 +1,18 @@
 body {
-    background-image: url("SCOTUS_0.jpg");
-    opacity: 1;
-    filter: alpha(opacity=100);
-    background-attachment: fixed;
-    background-position: center; 
-    background-color: rgba(255, 255, 455, 0.65);
-    background-blend-mode: lighten;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: left;
     color: rgb(41, 41, 44); 
     font-family: 'Open Sans', sans-serif;
     font-style: bold;
     font-size: 20px; 
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0,0,0,0.04);
   }
-p {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  width: 50%;
+
+.section{
+  max-width: 1000px; 
+  margin: 0 auto;
 }
-block{inline block-svg and p inlline block}
+
 img {
     display: block;
     margin-left: auto;
@@ -30,64 +20,160 @@ img {
     width: 30%;
     box-align: middle;
   }
-div {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    display: block; 
-    margin: auto;
-  }
+
+blockquote {
+  font-size: 20px;
+  margin: 100px 0 150px 0;
+  opacity: .8;
+  text-align: justify;
+  line-height: 1.7;
+}
+
+blockquote span {
+  display: block;
+  text-align: right;
+  padding: 18px 0 70px 0;
+}
+
 h1 {
   text-align: center;
-  color: slategray); 
+  color:  rgb(0,58,80); 
   font-family: 'Lato', sans-serif;
-  font-size: 40px;
+  font-size: 65px;
   font-style: bold;
-  text-shadow: 2px 2px 2px #aaa;
-  margin: 50 50% 50;
-  }
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .4);
+  margin: 100px auto 0px auto;
+  border-bottom: 1px solid rgba(0, 0, 0, .8);
+  padding-bottom: 40px;
+  max-width: 800px;
+}
+
 h2 {
   text-align: left;
-  color: rgb(50, 51, 56); 
+  color:  rgb(0,58,80); 
   text-shadow: 1px 1px 1px #aaa;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-style: bold;
-  text-decoration: underline;
   font-size: 35px; 
+  border-bottom: 1px solid rgba(0, 0, 0, .8);
+  padding-bottom: 40px;
   margin: 4% 10% 0%;
 }
+
 html {
   scroll-behavior: smooth;
   }
+
+.dark {
+  background-color: rgb(0,58,80);
+  color: lightsteelblue;
+  width: 100%;
+  height: 1000px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .4);
+}
+
+#upperDisplay img{
+  float: left; 
+  width: 50%;
+  padding: 20% 0;
+}
+
+#upperDisplay p{
+  display: block;
+  text-align: left;
+  font-family: 'Lato', sans-serif;
+  font-size: 22px;
+  width: 40%;
+  float: right;
+  margin: 0 40px;
+  line-height: 1.5;
+  padding: 20% 0;
+}
+
+br.clear {
+  clear: both
+}
+
+.container {
+  position: relative;
+  padding: 250px 0 125px 0;
+}
+
+div {
+  display: block; 
+  margin: auto;
+}
+
+#vizOne {
+  display: inline-block;
+  margin: 0 10px 50px auto;
+  width: 1025px;
+  height: 600px;
+  align-items: center;
+}
+
 div.tooltip {	
   position: absolute;			
   text-align: center;			
   width: 60px;					
   height: 28px;					
   padding: 2px;				
-  font: 12px sans-serif;		
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;		
   background: lightsteelblue;	
   border: 0px;		
   border-radius: 8px;			
   pointer-events: none;			
 }
 
-.container {
-  position: relative;
-}
-
-#vizOne {
-  display: inline-block;
-  margin: 0 auto;
-  margin-left: auto;
-  margin-right: 10px;
-  margin-bottom: 50px;
-}
-
 #vizText {
+  font-size: 16px;
+  line-height: 1.8;
   display: inline-block;
-  margin-left: 10px;
-  margin-right: auto;
-  margin-top: 20px;
-  width: 50%;
+  margin: 4% auto 0 10px;
+  max-width: 30%;
   position: absolute;
+}
+
+.dark2 {
+  background-image: url("SCOTUS_0.jpg");
+  opacity: 1;
+  filter: alpha(opacity=100);
+  background-attachment: fixed;
+  background-position: center; 
+  background-color: rgba(190, 204, 250, 0.774);
+  background-blend-mode: lighten;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-size: cover;
+  height: 1000px;
+  width: 100%;
+  color:  rgb(0, 41, 58); 
+  font-style: bold;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .4);
+}
+
+#lowerDisplay {
+  display: block;
+  text-align: left;
+  font-family: 'Lato', sans-serif;
+  font-size: 24px;
+  width: 90%;
+  margin: 0 auto;
+  line-height: 1.5;
+  padding: 120px 0;
+}
+
+#lowerDisplay p {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 70px;
+}
+
+#credits {
+  font-size:12px;
+  color:  rgb(0,58,80);
+  text-align: right;
+  width: 80%;
+  padding-top: 50px;
 }

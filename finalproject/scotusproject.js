@@ -14,16 +14,7 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
     var axis = d3.axisBottom(xScale);
     d3.select("#x-Axis").call(axis)
       .attr("transform", "translate(0,480)");
-
-    //var yScale = d3.scale.linear()
-        //.domain(y_domain).nice()
-        //range([height, 0], 0.5, 0.2);
-
-    //var yAxis = d3.svg.axis()
-        //.orient("left")
-        //.scale(yScale);
-
-            
+        
     var div = d3.select("body").append("div")	
         .attr("class", "tooltip")				
         .style("opacity", 0);
@@ -49,7 +40,10 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
           div.transition()		
               .duration(200)		
               .style("opacity", .9);		
-          div	.html(d.values.length)	
+          div.html((d.issue)+"<br>"+(d.values.length)+" cases")
+              .style("height", "auto")
+              .style("width", "auto")
+              .style("text-style", "bold")
               .style("left", (d3.event.pageX) + "px")		
               .style("top", (d3.event.pageY - 28) + "px");	
           })					
@@ -58,9 +52,6 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
               .duration(500)		
               .style("opacity", 0);
         });
-        //more text in tool tips (catagory and cases)
-        //img inline with text
-        //fix inline text formatting
 
     var issueMapping = {
         "1": "Criminal Procedure",
