@@ -70,8 +70,8 @@ html {
   background-color: rgba(150,190,212,1);
   color: rgb(0, 28, 39);
   width: 100%;
-  height: 750px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, .4);
+  height: 800px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .2);
 }
 
 #upperDisplay {
@@ -93,9 +93,9 @@ html {
   font-size: 24px;
   width: 41%;
   float: right;
-  margin: 0 40px;
-  line-height: 1.55;
-  padding: 40px 0;
+  margin: 0 50px 0 40px;
+  line-height: 1.5;
+  padding: 60px 0;
   max-height: 700px;
 }
 
@@ -122,7 +122,7 @@ div {
 #vizOne {
   display: inline-block;
   margin: 0 10px 50px auto;
-  width: 1025px;
+  width: 925px;
   height: 600px;
   align-items: center;
 }
@@ -143,10 +143,12 @@ div.tooltip {
 
 #vizText {
   font-size: 16px;
+  font-weight: 500;
   line-height: 1.8;
   display: inline-block;
-  margin: 4% auto 0 10px;
-  max-width: 30%;
+  margin: 4% 20px 0 10px;
+  max-width: 40%;
+  max-height: 600px;
   position: absolute;
 }
 
@@ -165,7 +167,7 @@ div.tooltip {
   width: 100%;
   color:  rgb(0, 29, 41); 
   font-style: bold;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, .4);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .2);
 }
 
 #lowerDisplay {
@@ -173,6 +175,7 @@ div.tooltip {
   text-align: left;
   font-family: 'Lato', sans-serif;
   font-size: 24px;
+  font-weight: 500;
   width: 90%;
   max-width: 2000px;
   margin: 0 auto;
@@ -190,6 +193,8 @@ div.tooltip {
   font-size:12px;
   color:  rgb(0,58,80);
   text-align: right;
-  width: 95%;
-  padding-top: 30px;
+  width: 100%;
+  margin: 0;
+  padding: 30px 0 20px;
+  background-color: rgba(130, 170, 190, 1);
 }
