@@ -26,7 +26,7 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
 
     groupIssueBarEnter
         .attr("class", "rect")
-        .attr("fill", "saddlebrown")
+        .attr("fill", "rgba(10,28,69,.9)")
         .attr("stroke-width", "1.25")
         .attr("x", "202")
         .attr("height", 13)
@@ -98,8 +98,8 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
       .tickSize(-440)
       .tickFormat("");
     d3.select("#x-Grid").call(grid)
-      .attr("transform", "translate(0,480)");
-
+      .attr("transform", "translate(0,480)")
+      .style("fill", "rgba(150,190,212,1)");
     });
 
     

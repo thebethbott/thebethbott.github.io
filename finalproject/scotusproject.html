@@ -5,7 +5,7 @@
         <title>Scotus Case Analysis</title>
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <link rel="stylesheet" href="scotusproject.css"/>
-        <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,500,600,700,800,900|Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
     </head>
     <body>
@@ -18,21 +18,23 @@
             <span> &mdash; SupremeCourt.gov </span> </blockquote>
     </div>
         <div class="dark">
-            <div class = section>
+            <div class="section">
             <div id="upperDisplay">
                 <img src="Scotus party.jpg"/>
+                <div id="intro">
+                <h2>Introduction</h2>
                 <p>The Supreme Court and its eight justices hear cases on a variety of issues ranging from 
                     protecting states’ rights to privacy. Both issues have been linked with larger social 
-                    movements (the conservative right and the LGBTQIA+ and Women's movements respectively). 
-                    Justices select the specific cases they will hear in a given term and their discretion has 
+                    movements (the conservative right and the LGBTQIA+ and Women's movements respectively). <br />
+                    <br />Justices select the specific cases they will hear in a given term and their discretion has 
                     a lasting impact on the legacy of the Court. As a way to understand the distribution of 
                     Judicial power towards progress on these issues, below we compare the number of cases that 
-                    focus on each issue area.</p>
-        </div></div>
+                    focus on each issue area.</p></div>
             <br class="clear"/>
+        </div></div>
         </div>
         <div class="container">
-        <span><h2>Total Cases Discussed by Issue</h2>
+        <span><h2 class="lowerTitle">Total Cases Discussed by Issue</h2>
         <svg id="vizOne">
                 <g id="x-Grid"></g>
                 <g id="x-Axis"></g>
@@ -46,7 +48,7 @@
         <br /><br />
         <div class="dark2">
         <div id="lowerDisplay">
-            <h2>Analysis</h2>
+            <h2 class="lowerTitle">Analysis</h2>
             <p>Rationally property and safety are at the fundamental core of any rule of law society, 
             and Judicial power is the organizing principal by which both are determined&mdash; logically 
             these are the primary areas of focus. Far fewer cases fundamentally change our rights and 
@@ -59,7 +61,7 @@
             policy determine by the legislature, <strong>by pushing the boundaries of the interpretations of the 
             constitution, it also has in fact exercised its power to adjudicate beyond the scope of existing 
             agreed upon laws</strong>. </p></div></div>
-        <p id="credits">Credits: project by Bethany Basile; data from Washington University Law</p>
+        <p id="credits">Credits: visualization by Bethany Basile; data from Washington University Law</p>
         <script src="scotusproject.js"></script>
     </div>
     </body>
