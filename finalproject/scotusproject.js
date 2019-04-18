@@ -7,7 +7,7 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
         
     var xScale = d3.scaleLinear()
         .domain([0, x_domain]) 
-        .range([200, 900]);
+        .range([200, 750]);
     
     var svg = d3.select("#vizOne"); 
     
