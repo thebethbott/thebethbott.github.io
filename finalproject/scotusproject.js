@@ -1,7 +1,8 @@
 d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
     var groupIssue = d3.nest()
         .key(function(d) { return d.issueArea; })
-        .entries(data);
+        .entries(data)
+        .sort(function(d) { return d3.ascending(d.value)});
 
     var x_domain = d3.max(groupIssue, function(d) { return d.values.length; });
         
@@ -35,7 +36,7 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
             return xScale(d.values.length) - 200;
         })
         .attr("y", function(d, i) { 
-            return i * 28 + 77})        
+            return i * 28 + 77}) 
       .on("mouseover", function(d) {		
           div.transition()		
               .duration(200)		
