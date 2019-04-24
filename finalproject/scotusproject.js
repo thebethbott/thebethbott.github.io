@@ -2,22 +2,22 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
     var groupIssue = d3.nest()
         .key(function(d) { return d.issueArea; })
         .entries(data)
-        .sort(function(a, b) { return b.values.length - a.values.length});
+        .sort(function(a, b) { return b.values.length - a.values.length });
 
     var x_domain = d3.max(groupIssue, function(d) { return d.values.length; });
-        
+
     var xScale = d3.scaleLinear()
-        .domain([0, x_domain]) 
+        .domain([0, x_domain])
         .range([200, 750]);
-    
-    var svg = d3.select("#vizOne"); 
-    
+
+    var svg = d3.select("#vizOne");
+
     var axis = d3.axisBottom(xScale);
     d3.select("#x-Axis").call(axis)
-      .attr("transform", "translate(0,480)");
-        
-    var div = d3.select("body").append("div")	
-        .attr("class", "tooltip")				
+        .attr("transform", "translate(0,480)");
+
+    var div = d3.select("body").append("div")
+        .attr("class", "tooltip")
         .style("opacity", 0);
 
     var rectIssueFrequency = svg.selectAll("rect")
@@ -35,23 +35,24 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
             console.log(d)
             return xScale(d.values.length) - 200;
         })
-        .attr("y", function(d, i) { 
-            return i * 28 + 77}) 
-      .on("mouseover", function(d) {		
-          div.transition()		
-              .duration(200)		
-              .style("opacity", .9);		
-          div.html((d.issue)+"<br>"+(d.values.length)+" cases")
-              .style("height", "auto")
-              .style("width", "auto")
-              .style("text-style", "bold")
-              .style("left", (d3.event.pageX) + "px")		
-              .style("top", (d3.event.pageY - 28) + "px");	
-          })					
-      .on("mouseout", function(d) {		
-          div.transition()		
-              .duration(500)		
-              .style("opacity", 0);
+        .attr("y", function(d, i) {
+            return i * 28 + 77
+        })
+        .on("mouseover", function(d) {
+            div.transition()
+                .duration(200)
+                .style("opacity", .9);
+            div.html((d.issue) + "<br>" + (d.values.length) + " cases")
+                .style("height", "auto")
+                .style("width", "auto")
+                .style("text-style", "bold")
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+        })
+        .on("mouseout", function(d) {
+            div.transition()
+                .duration(500)
+                .style("opacity", 0);
         });
 
     var issueMapping = {
@@ -69,11 +70,11 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
         "12": "Federal Taxation",
         "13": "Other",
         "14": "Private Law",
-        };
-          
+    };
+
     groupIssue.forEach(function(d) {
         d.issue = issueMapping[d.key];
-        });
+    });
 
     var labelIssueEnter = svg.selectAll(".label")
         .data(groupIssue)
@@ -87,18 +88,19 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
         .attr("font-size", "14px")
         .attr("text-anchor", "end")
         .attr("x", "190")
-        .text( function (d) { 
-            return d.issue; })
-        .attr("y", function(d, i) { 
+        .text(function(d) {
+            return d.issue;
+        })
+        .attr("y", function(d, i) {
             console.log(d)
-            return i * 28 + 77; 
+            return i * 28 + 77;
         })
         .attr("dy", "10px");
 
     var grid = d3.axisBottom(xScale)
-      .tickSize(-440)
-      .tickFormat("");
+        .tickSize(-440)
+        .tickFormat("");
     d3.select("#x-Grid").call(grid)
-      .attr("transform", "translate(0,480)")
-      .style("fill", "rgba(150,190,212,1)");
-    });
+        .attr("transform", "translate(0,480)")
+        .style("fill", "rgba(150,190,212,1)");
+});

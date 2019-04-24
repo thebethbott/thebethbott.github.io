@@ -1,77 +1,96 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>Scotus Case Analysis</title>
-        <script src="https://d3js.org/d3.v4.min.js"></script>
-        <link rel="stylesheet" href="scotusproject.css"/>
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,500,600,700,800,900|Open+Sans" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-    </head>
-    <body>
-        <h1>Issue Prevalence in the <br /> U.S. Supreme Court</h1>
-    <div class= "section">
-        <blockquote> <i>"The Court is the highest tribunal in the Nation for all cases and controversies arising 
-            under the Constitution or the laws of the United States. As the final arbiter of the law, 
-            the Court is charged with ensuring the American people the promise of equal justice under law and, 
-            thereby, also functions as guardian and interpreter of the Constitution."</i> 
-            <span> &mdash; SupremeCourt.gov </span> </blockquote>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Scotus Case Analysis</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" href="scotusproject.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,500,600,700,800,900|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Issue Prevalence in the <br /> U.S. Supreme Court</h1>
+    <div class="section">
+        <blockquote> <i>"The Court is the highest tribunal in the Nation for all cases and controversies arising
+                under the Constitution or the laws of the United States. As the final arbiter of the law,
+                the Court is charged with ensuring the American people the promise of equal justice under law and,
+                thereby, also functions as guardian and interpreter of the Constitution."</i>
+            <span> &mdash; SupremeCourt.gov </span>
+        </blockquote>
     </div>
-        <div class="dark">
-            <div class="section">
+    <div class="dark">
+        <div class="section">
             <div id="upperDisplay">
-                <img src="Scotus party.jpg"/>
+                <img src="Scotus party.jpg" />
                 <div id="intro">
-                <h2>Introduction</h2>
-                <p>The Supreme Court's primary role is to maintain the status quo by enforcing the laws of the 
-                    legislative branch. Its eight justices have the discretion to hear cases on a variety of issues. 
-                    Some of the cases they choose to hear, seek to push the interpretation of laws beyond maintaining the status 
-                    quo and have a lasting impact on the legacy of the Court and the course our society.
-                    Cases discussing privacy, for example, have altered the course of history propelling both 
-                    the LGBTQIA+ and Women's movements forward. If used too liberally, this power gives these eight unelected 
-                    officials broad unchecked power.</p> </div>
-            <br class="clear"/>
-        </div></div></div>
-        <div class="container">    
-        <span><h2 class="lowerTitle">Total Cases Discussed by Issue</h2>
-        <p id="vizIntro">To understand the degree of cumulative Judicial power since its incarnation, 
-           below we compare cases categorized by overarching distinctive issue areas.</p>
-        <svg id="vizOne">
+                    <h2>Introduction</h2>
+                    <p>The Supreme Court's primary role is to maintain the status quo by enforcing the laws of the legislative branch. Its eight justices have the discretion to hear cases on a variety of issues. Some of the cases they choose to hear, seek
+                        to push the interpretation of laws beyond maintaining the status quo and have a lasting impact on the legacy of the Court and the course our society. Cases discussing privacy, for example, have altered the course of history propelling
+                        both the LGBTQIA+ and Women's movements forward. If used too liberally, this power gives these eight unelected officials broad unchecked power.</p>
+                </div>
+                <br class="clear" />
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <span>
+            <h2 class="lowerTitle">Total Cases Discussed by Issue</h2>
+            <p id="vizIntro">To understand the degree of cumulative Judicial power since its incarnation,
+                below we compare cases categorized by overarching distinctive issue areas.</p>
+            <svg id="vizOne">
                 <g id="x-Grid"></g>
                 <g id="x-Axis"></g>
             </svg>
-        <div id="vizText"><p height=500 text-color=rgb(0,58,80)> <strong> The primary issue areas at the forefront of 
-            the Court's cumulative caseload include:</strong></p>
-                <ol><li>Criminal procedure- <i>cruel and unusual punishment, 
-                    right to council, and illegal search and seizure</i></li> <br />
-                    <li>Economic activity- <i>wage arbitration, property claims, and corruption</i></li> <br />
-                    <li>Civil rights- <i>voting rights, desegregation, and discrimination</i></li></ol></div></div>
-        <br /><br />
-        <div class="dark2">
+            <div id="vizText">
+                <p> <strong> The primary issue areas at the forefront of
+                        the Court's cumulative caseload include:</strong>
+                </p>
+                <ol class="issueList">
+                    <li>Criminal procedure- <i>cruel and unusual punishment,
+                            right to council, and illegal search and seizure</i>
+                    </li>
+                    <li>Economic activity- <i>wage arbitration, property claims, and corruption</i>
+                    </li>
+                    <li>Civil rights- <i>voting rights, desegregation, and discrimination</i>
+                    </li>
+                </ol>
+            </div>
+    </div>
+    <div class="dark2">
         <div id="lowerDisplay">
             <h2 class="lowerTitle">Analysis</h2>
-            <p>Rationally to maintain the status quo, the Court's role to protect property and safety are at the 
-                fundamental core of our rule of law society&mdash; logically these have been the issues most frequently 
-                reviewed in Supreme Court cases: 1) Criminal Procedure followed by 2) Economic Activity. 
-                The court has adjudicated far fewer cases that fundamentally change our rights 
+            <p>Rationally to maintain the status quo, the Court's role to protect property and safety are at the
+                fundamental core of our rule of law society&mdash; logically these have been the issues most frequently
+                reviewed in Supreme Court cases: 1) Criminal Procedure followed by 2) Economic Activity.
+                The court has adjudicated far fewer cases that fundamentally change our rights
                 and protections related to, for example, free speech and organized labor.
+            </p>
 
-            <br /><br />However, one issue area that has substantially impacted our social order is Civil Rights. 
-            Given the high percentage of cases reviewed in the Civil Rights issue area, as the third most deliberated 
-            issue area in the Court to-date, the protection of Civil Rights can be attributed as a primary function 
-            of the Court. 
-            These data reflect a common thought that the Supreme Court is in fact an <i>"Activist Court"</i> that 
-            creates its own laws and furthers social movement, progress, or change. From affirmative action and 
-            integration to voting rights and jurisdiction limitations over indigenous peoples the Court has played 
-            a powerful role in our society, despite being removed from the democratic election system required by 
-            our other branches of government. 
+            <p>However, one issue area that has substantially impacted our social order is Civil Rights.
+                Given the high percentage of cases reviewed in the Civil Rights issue area, as the third most
+                deliberated issue area in the Court to-date, the protection of Civil Rights can be attributed
+                as a primary function of the Court. These data reflect a common thought that the Supreme Court
+                is in fact an <i>"Activist Court"</i> that creates its own laws and furthers social movement,
+                progress, or change. From affirmative action and integration to voting rights and jurisdiction
+                limitations over indigenous peoples the Court has played a powerful role in our society, despite
+                being removed from the democratic election system required by
+                our other branches of government.
+            </p>
 
-            <br /><br />While the Court remains true to its function as the constitution's guardian, 
-            the Court has exercised its power as interpreter to adjudicate beyond the scope of existing 
-            agreed upon laws. As parties continue to change and the country becomes increasing divided,
-            this unchecked power has an unstable stronghold on our democracy. </p> <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-        <p id="credits">Credits: visualization by Bethany Basile; data from <a href=http://scdb.wustl.edu>Washington University Law</a></p></div></div>
-        <script src="scotusproject.js"></script>
-    </div>
-    </body>
+            <p>While the Court remains true to its function as the constitution's guardian,
+                the Court has exercised its power as interpreter to adjudicate beyond the scope of existing
+                agreed upon laws. As parties continue to change and the country becomes increasing divided,
+                this unchecked power has an unstable stronghold on our democracy.
+            </p>
+            <p id="credits">Credits: visualization by Bethany Basile; data from <a href=http://scdb.wustl.edu>Washington
+                    University Law</a> 
+            </p> 
+        </div> 
+    </div> 
+    <script src="scotusproject.js"></script>
+</div>
+</body>
+
 </html>
