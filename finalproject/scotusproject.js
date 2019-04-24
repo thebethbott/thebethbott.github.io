@@ -2,7 +2,7 @@ d3.csv("scotusdatabyissue2.16.19.csv", function(error, data) {
     var groupIssue = d3.nest()
         .key(function(d) { return d.issueArea; })
         .entries(data)
-        .sort(function(d) { return d3.ascending(d.value)});
+        .sort(function(a, b) { return b.values.length - a.values.length)});
 
     var x_domain = d3.max(groupIssue, function(d) { return d.values.length; });
         
